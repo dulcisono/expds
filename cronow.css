@@ -1,0 +1,147 @@
+:root{
+  --aristocracia: #B5788F;
+  --burgueses: #8C7351;
+  --bohemia: #7B5233;
+  --plebeyos: #5A6B7C;
+}
+
+.crono-w{
+  position:relative;
+  background-color:transparent;
+  width:500px;
+  max-height: none;
+}
+
+.crono-w::before{
+  content:"";
+  position:absolute;
+  inset:-25px;
+  border:2px solid #B4C6E2;
+  border-radius:20px;
+  corner-shape:scoop;
+  z-index:2;
+  pointer-events:none;
+  transition:inset 1s linear;
+}
+
+.top-cab{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:10px 65px;
+  margin-bottom:20px;
+}
+
+.top-titulo{
+  font-family: 'Meorgine', sans-serif;
+  font-weight: bold;
+  font-size:35px;
+  color:#3E5A8C;
+}
+
+.top-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#DCE5F3;
+  color:#1F2A44;
+  font-size:20px;
+}
+
+.top-chip .gi{
+  font-style:normal;
+  line-height:1;
+}
+
+.top-chip .gi-crown{
+  color:var(--aristocracia);
+}
+
+.crono-div{
+  display:block;
+  width:100%;
+  height:35px;
+  object-fit:contain;
+  margin:0 0 16px;
+}
+
+.crono-fecha{
+  font-family: 'Meorgine', sans-serif;
+  font-size:20px;
+  letter-spacing:3px;
+  font-weight:bold;
+  color:#3E5A8C;
+  margin-bottom:12px;
+}
+
+.cronotema + .crono-fecha{
+  margin-top:32px;
+}
+
+.cronotema{
+  display:flex;
+  gap:20px;
+  font-weight:400;
+  text-align:center;
+  align-items:center;
+  color: #3E5A8C;
+  letter-spacing:2px;
+  font-family: 'Goudy Old Style', sans-serif;
+  font-size:15px;
+}
+
+.cronotema.aristocracia{--grupo: var(--aristocracia);}
+.cronotema.burgueses{--grupo: var(--burgueses);}
+.cronotema.bohemia{--grupo: var(--bohemia);}
+.cronotema.plebeyos{--grupo: var(--plebeyos);}
+
+.cronotema a,
+.cronotema a:link,
+.cronotema a:visited,
+.cronotema a:hover,
+.cronotema a:active {
+  order: 0;
+  color: #3E5A8C;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+.cronotema a:hover {
+  opacity: .65;
+}
+
+.cronotema::after {
+  content: '';
+  display: block;
+  height: .5px;
+  margin: 0 5px;
+  flex: 1;
+  order: 1;
+  background: #6a98ab;
+}
+
+.cronotema span {
+  order: 2;
+  color: #3E5A8C;
+}
+
+.cronotema span:not(.top-chip) i {
+  font-style: italic;
+  color: var(--grupo);
+}
+
+.cronotema .top-chip{
+  order:0;
+  margin:10px;
+  width:30px;
+  height:30px;
+  font-size:16px;
+  color:#1F2A44;
+}

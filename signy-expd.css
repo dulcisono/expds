@@ -1,3 +1,5 @@
+:root {--grupo: #4C6D7B;}
+
 .sgydeco {
   display: flex;
   flex-direction: column;
